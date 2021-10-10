@@ -1,0 +1,125 @@
+module.exports = {
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  parserOptions: {
+    sourceType: 'module',
+  },
+  parser: '@babel/eslint-parser',
+  overrides: [
+    {
+      files: ['**/*.ts', '**/*.tsx'],
+      parser: '@typescript-eslint/parser',
+      plugins: ['@typescript-eslint'],
+      rules: {
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': [
+          'error',
+          {
+            vars: 'all',
+            args: 'after-used',
+            ignoreRestSiblings: false,
+          },
+        ],
+      },
+    },
+  ],
+  // rules: {
+  //   'react/jsx-one-expression-per-line': 0,
+  //   'react/jsx-closing-tag-location': 0,
+  //   'react/jsx-indent': 0,
+  //   'react/prop-types': 0,
+  //   'react/forbid-prop-types': 0,
+  //   'react/destructuring-assignment': 0,
+  //   'react/no-unescaped-entities': 0,
+  //   'react/no-did-update-set-state': 0,
+  //   'react/jsx-filename-extension': 0,
+  //   'react/button-has-type': 0,
+  //   'react/no-array-index-key': 0,
+  //   'react/no-multi-comp': 0,
+  //   'react/sort-comp': 0,
+  //   'react/no-unused-prop-types': 0,
+  //   'react/require-default-props': 0,
+  //   'react/jsx-wrap-multilines': 0,
+  //   'react/jsx-key': ['error'],
+
+  //   'react-hooks/rules-of-hooks': 'error',
+  //   'react-hooks/exhaustive-deps': 'warn',
+
+  //   'jsx-a11y/label-has-for': 0,
+  //   'jsx-a11y/click-events-have-key-events': 0,
+  //   'jsx-a11y/label-has-associated-control': 0,
+  //   'jsx-a11y/no-noninteractive-element-interactions': 0,
+  //   'jsx-a11y/no-static-element-interactions': 0,
+  //   'jsx-a11y/accessible-emoji': 0,
+  //   'jsx-a11y/anchor-is-valid': 0,
+  //   'jsx-a11y/alt-text': 0,
+  //   'jsx-a11y/no-autofocus': 0,
+
+  //   'import/no-extraneous-dependencies': 0,
+  //   'import/prefer-default-export': 0,
+  //   'import/no-default-export': 2,
+  //   'object-curly-spacing': 0,
+  //   'no-unexpected-multiline': 0,
+
+  //   'max-len': 0,
+  //   semi: 0,
+  //   'arrow-parens': 0,
+  //   'no-trailing-spaces': 0,
+  //   'comma-dangle': 0,
+  //   'operator-linebreak': 0,
+  //   indent: 0,
+  //   'no-confusing-arrow': 0,
+  //   'object-curly-newline': 0,
+  //   'no-underscore-dangle': 0,
+
+  //   'no-else-return': ['error', { allowElseIf: true }],
+  //   'consistent-return': 0,
+  //   'implicit-arrow-linebreak': 0,
+  //   'wrap-iife': 0,
+  //   'function-paren-newline': 0,
+  //   'nonblock-statement-body-position': 0,
+  //   'no-prototype-builtins': 0,
+  //   'class-methods-use-this': 0,
+  //   'no-use-before-define': 0,
+  //   'no-plusplus': 0,
+  //   'no-param-reassign': 0,
+  //   'no-unused-expressions': 0,
+  //   'guard-for-in': 0,
+  //   'no-return-assign': 0,
+  //   'array-callback-return': 0,
+  //   camelcase: 0,
+  //   'lines-between-class-members': 0,
+
+  //   'import/order': [
+  //     'error',
+  //     {
+  //       groups: [
+  //         'builtin',
+  //         'external',
+  //         'internal',
+  //         'parent',
+  //         'sibling',
+  //         'index',
+  //       ],
+  //     },
+  //   ],
+  //   'padding-line-between-statements': [
+  //     'warn',
+  //     { blankLine: 'always', prev: '*', next: 'return' },
+  //   ],
+  // },
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
+    node: true,
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    // 'import/resolver': {
+    //   'babel-module': aliasMap,
+    //   typescript: {}, // https://github.com/benmosher/eslint-plugin-import/issues/1485#issuecomment-535351922
+    // },
+  },
+};
